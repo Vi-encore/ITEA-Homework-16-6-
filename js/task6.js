@@ -139,8 +139,12 @@ let filtered1 = rating2.filter((item) => {
   return item.director === "Christopher Nolan";
 });
 
-let AverageRating = filtered1.reduce((prevVal, currentVal, index, arr) => {
+
+let reduced = filtered1.reduce((prevVal, currentVal, index, arr) => {
   return prevVal + currentVal.imdbRating;
 }, 0);
+;
+
+let AverageRating = reduced / filtered1.length;
 
 console.log(AverageRating);
